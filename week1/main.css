@@ -1,0 +1,74 @@
+body{
+  background-image: url(images/bg-pattern-top.svg), url(images/bg-pattern-bottom.svg);
+  background-repeat:no-repeat, no-repeat;
+  background-position: right 50vw bottom 70vh, left 50vw top 70vh;
+  flex-direction: column;
+  background-color: hsl(185, 75%, 39%);
+  padding: 450px 600px
+}
+
+.profile{
+  width:330px;
+  height:100px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top:60px;
+  overflow: hidden;
+}
+.stats{
+  display: flex;
+  overflow: hidden;
+  width:330px;
+  height:100px;
+  background-color: white;
+  border-top: 2px solid hsl(0, 0%, 90%);
+}
+.back{
+  width:330px;
+  overflow: hidden;
+}
+img{
+  display: block;
+}
+.conatiner{
+  position:relative;
+}
+
+.container .image{
+  position:absolute;
+  top:550px;
+  left:725px;
+  border:5px solid white;
+  border-radius: 50%;
+  overflow:hidden;
+}
+.name{
+  font-weight: bold;
+}
+.gray{
+  color:hsl(0, 0%, 59%);
+}
+
+
+.stats div:nth-child(1){
+  text-align: center;
+  flex-grow:1;
+}
+.stats div:nth-child(2){
+  text-align: center;
+  flex-grow:1;
+}
+.stats div:nth-child(3){
+  text-align: center;
+  flex-grow:1;
+}
+.bold{
+  font-weight: bold;
+  font-size:20px;
+}
+.small{
+  font-size:smaller;
+  color:hsl(0, 0%, 59%);
+}
