@@ -1,3 +1,7 @@
+* {
+  /* outline: 1px solid red; */
+  box-sizing: border-box;
+}
 body {
   font-family: 'Kumbh Sans', sans-serif;
   width: 100vw;
@@ -6,6 +10,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: hsl(185, 75%, 39%);
+  overflow: hidden;
 }
 
 /* 배경의 좌측 상단 패턴 */
@@ -33,30 +38,33 @@ div.profile {
   border-radius: 20px;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 /* 프로필 카드 상단*/
 div.profile-top {
-  height: 140px;
-  border-radius: 20px 20px 0 0;
+  height: 30%;
   background: url('../images/bg-pattern-card.svg');
+}
+div.profile-top .profile-img {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  transform: translateY(50%);
+}
+div.profile-top img {
+  height: 100%;
+  border: 5px solid white;
+  border-radius: 50%;
 }
 
 /* 프로필 카드 중간*/
 div.profile-mid {
-  height: 160px;
-  font-size: 20px;
+  height: 40%;
+  font-size: 24px;
   color: hsl(227, 10%, 46%);
   /* 프로필 이미지를 위한 relative설정 */
   position: relative;
-}
-div.profile-mid img {
-  width: 100px;
-  border: 5px solid white;
-  border-radius: 50%;
-  position: absolute;
-  top: -50px;
-  left: 130px;
 }
 div.profile-mid .name {
   font-weight: 700;
@@ -65,43 +73,39 @@ div.profile-mid .name {
   margin-top: 80px;
 }
 div.profile-mid .name span {
+  font-size: 20px;
   font-weight: 400;
   margin: 0 10px;
 }
 div.profile-mid .city {
+  font-size: 20px;
   text-align: center;
   margin-top: 10px;
 }
 
 /* 프로필 카드 하단*/
 div.profile-bottom {
-  height: 100px;
+  height: 30%;
   border-top: 1px solid hsl(0, 0%, 59%);
   display: flex;
 }
-div.profile-bottom div {
-  width: 125px;
+div.profile-bottom .info {
+  flex-grow: 1;
+  flex-basis: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+
 div.profile-bottom .stats {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 700;
   color: hsl(229, 23%, 23%);
 }
-div.profile-bottom .discription {
-  margin-top: 5px;
+div.profile-bottom .description {
+  margin-top: 10px;
 }
-
-/* footer {
-  font-size: 11px;
-  text-align: center;
-}
-footer a {
-  color: hsl(228, 45%, 44%);
-} */
 
 @media (max-width: 800px) {
   .small-tomato {
