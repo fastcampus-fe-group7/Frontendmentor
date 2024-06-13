@@ -2,6 +2,7 @@
   /* outline: 1px solid red; */
   box-sizing: border-box;
 }
+
 body {
   font-family: 'Kumbh Sans', sans-serif;
   width: 100vw;
@@ -63,8 +64,6 @@ div.profile-mid {
   height: 40%;
   font-size: 24px;
   color: hsl(227, 10%, 46%);
-  /* 프로필 이미지를 위한 relative설정 */
-  position: relative;
 }
 div.profile-mid .name {
   font-weight: 700;
@@ -97,7 +96,6 @@ div.profile-bottom .info {
   align-items: center;
   justify-content: center;
 }
-
 div.profile-bottom .stats {
   font-size: 24px;
   font-weight: 700;
@@ -105,10 +103,4 @@ div.profile-bottom .stats {
 }
 div.profile-bottom .description {
   margin-top: 10px;
-}
-
-@media (max-width: 800px) {
-  .small-tomato {
-    background-color: tomato;
-  }
 }
