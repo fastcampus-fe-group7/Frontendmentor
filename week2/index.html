@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week2 - Results summary component</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div class="card">
+      <div class="main-box">
+        <span class="title-text">당신의 MBTI 결과</span>
+        <div class="mbti-box">
+          <span class="mbti-text">INTJ</span>
+        </div>
+        <div class="info-box">
+          <span class="grade-text">전략가</span>
+          <span class="info-text"
+            >전략가는 모든 일에 계획을 세우며 상상력이 풍부한 성격 유형입니다.
+            잘 어울릴 수 있는 MBTI 유형으로는 ENFP, ENTP가 있습니다.</span
+          >
+        </div>
+        <img class="mbti-img" src="/assets/images/intj.png" alt="INTJ" />
+      </div>
+      <div class="summary-box">
+        <span class="title-text">상세 정보</span>
+        <div class="detail-box mind">
+          <span class="info-text">마음</span>
+          <div class="graph-box">
+            <div class="per-box">
+              <span class="info-text">44%</span>
+              <span class="mini-text">외향형(E)</span>
+            </div>
+            <div class="graph-outer">
+              <div class="graph-inner"></div>
+            </div>
+            <div class="per-box">
+              <span class="info-text">56%</span>
+              <span class="mini-text">내향형(I)</span>
+            </div>
+          </div>
+        </div>
+        <div class="detail-box energy">
+          <span class="info-text">에너지</span>
+          <div class="graph-box">
+            <div class="per-box">
+              <span class="info-text">89%</span>
+              <span class="mini-text">직관형(N)</span>
+            </div>
+            <div class="graph-outer">
+              <div class="graph-inner"></div>
+            </div>
+            <div class="per-box">
+              <span class="info-text">11%</span>
+              <span class="mini-text">현실형(S)</span>
+            </div>
+          </div>
+        </div>
+        <div class="detail-box nature">
+          <span class="info-text">본성</span>
+          <div class="graph-box">
+            <div class="per-box">
+              <span class="info-text">55%</span>
+              <span class="mini-text">사고형(T)</span>
+            </div>
+            <div class="graph-outer">
+              <div class="graph-inner"></div>
+            </div>
+            <div class="per-box">
+              <span class="info-text">45%</span>
+              <span class="mini-text">감각형(F)</span>
+            </div>
+          </div>
+        </div>
+        <div class="detail-box tactics">
+          <span class="info-text">전술</span>
+          <div class="graph-box">
+            <div class="per-box">
+              <span class="info-text">79%</span>
+              <span class="mini-text">계획형(J)</span>
+            </div>
+            <div class="graph-outer">
+              <div class="graph-inner"></div>
+            </div>
+            <div class="per-box">
+              <span class="info-text">21%</span>
+              <span class="mini-text">탐색형(P)</span>
+            </div>
+          </div>
+        </div>
+        <button class="btn info-text">확인</button>
+      </div>
+    </div>
+  </body>
+</html>

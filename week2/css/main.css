@@ -1,0 +1,431 @@
+/* 폰트 추가 */
+@font-face {
+  font-family: 'esamanru';
+  src: url(/assets/fonts/esamanru.otf);
+}
+
+/* 전체 요소 폰트 적용 */
+* {
+  font-family: 'esamanru';
+}
+
+/* html, body 태그 스타일 */
+html,
+body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'esamanru';
+}
+
+/* 폰트 사이즈 스타일 */
+.title-text {
+  font-size: 25px;
+}
+.mbti-text {
+  font-size: 70px;
+}
+.grade-text {
+  font-size: 30px;
+}
+.info-text {
+  font-size: 18px;
+}
+.mini-text {
+  font-size: 10px;
+}
+
+/* MBTI별 박스 스타일 */
+.mind {
+  color: #d97173;
+  background-color: #fff6f5;
+}
+.energy {
+  color: #f6b851;
+  background-color: #fffbf2;
+}
+.nature {
+  color: #4cb59c;
+  background-color: #f2fbfa;
+}
+.tactics {
+  color: #444898;
+  background-color: #f3f3fd;
+}
+
+/* card 컴포넌트 스타일 */
+.card {
+  width: 50rem;
+  height: 35rem;
+  display: flex;
+  border-radius: 30px;
+  box-shadow: 5px 5px 10px 0px gray;
+}
+
+.card:hover {
+  transform: translateY(-0.5rem);
+  transition: 1s ease;
+}
+
+/* main-box 스타일 */
+.card .main-box {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 30px;
+  background: linear-gradient(to bottom, #88619a, #dbc8e4);
+  overflow: hidden;
+  z-index: -1;
+  color: white;
+}
+.card .main-box .title-text {
+  position: absolute;
+  top: 2.5rem;
+}
+.card .main-box .mbti-img {
+  position: absolute;
+  bottom: -3rem;
+  left: 0rem;
+  opacity: 0.3;
+  z-index: 0;
+}
+.card .main-box .mbti-box {
+  width: 13rem;
+  height: 13rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+  background-color: #88619a;
+  border-radius: 100%;
+  z-index: 1;
+}
+.card .main-box .info-box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 3rem;
+  z-index: 1;
+  color: #36263d;
+  line-height: 1.15;
+  word-break: break-all;
+}
+.card .main-box .info-box .grade-text {
+  margin-bottom: 2rem;
+}
+
+/* summray-box 스타일 */
+.card .summary-box {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 30px;
+}
+.card .summary-box .title-text {
+  position: absolute;
+  top: 2.5rem;
+  left: 2.8rem;
+  color: #36263d;
+}
+.card .summary-box .detail-box {
+  width: 80%;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 5px 0;
+  padding-bottom: 5px;
+  border-radius: 10px;
+}
+.card .summary-box .detail-box .graph-box {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  margin-top: 10px;
+}
+.card .summary-box div:nth-child(5) {
+  margin-bottom: 1.5rem;
+}
+.card .summary-box .detail-box.mind .graph-box .graph-outer {
+  width: 12rem;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  background-color: white;
+  margin: 0 10px;
+}
+.card .summary-box .detail-box.mind .graph-box .graph-inner {
+  width: 56%;
+  height: 0.8rem;
+  background-color: #d97173;
+}
+.card .summary-box .detail-box.energy .graph-box .graph-outer {
+  width: 12rem;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  margin: 0 10px;
+}
+.card .summary-box .detail-box.energy .graph-box .graph-inner {
+  width: 89%;
+  height: 0.8rem;
+  background-color: #f6b851;
+}
+.card .summary-box .detail-box.nature .graph-box .graph-outer {
+  width: 12rem;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  margin: 0 10px;
+}
+.card .summary-box .detail-box.nature .graph-box .graph-inner {
+  width: 56%;
+  height: 0.8rem;
+  background-color: #4cb59c;
+}
+.card .summary-box .detail-box.tactics .graph-box .graph-outer {
+  width: 12rem;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  margin: 0 10px;
+}
+.card .summary-box .detail-box.tactics .graph-box .graph-inner {
+  width: 79%;
+  height: 0.8rem;
+  background-color: #444898;
+}
+.card .summary-box .detail-box .graph-box .per-box {
+  width: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+.card .summary-box .detail-box .per-box .mini-text {
+  margin-top: 3px;
+}
+
+/* btn 스타일 */
+.card .btn {
+  width: 80%;
+  height: 3rem;
+  position: absolute;
+  bottom: 2rem;
+  border-radius: 10px;
+  color: white;
+  background-color: #303b59;
+  border: none;
+}
+
+.card .btn:hover {
+  cursor: pointer;
+  background-color: #566386;
+}
+
+/* 모바일 반응형 분기점 */
+@media all and (max-width: 479px) {
+  /* 모바일 폰트 사이즈 스타일 */
+  .title-text {
+    font-size: 20px;
+  }
+  .mbti-text {
+    font-size: 50px;
+  }
+  .grade-text {
+    font-size: 25px;
+  }
+  .info-text {
+    font-size: 15px;
+  }
+  .mini-text {
+    font-size: 11px;
+  }
+
+  /* card 컴포넌트 스타일 */
+  .card {
+    width: 90%;
+    min-width: 420px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* main-box 스타일 */
+  .card .main-box {
+    width: 100%;
+    max-height: auto;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 30px;
+    background: linear-gradient(to bottom, #88619a, #dbc8e4);
+    overflow: hidden;
+    z-index: -1;
+    color: white;
+  }
+  .card .main-box .title-text {
+    position: absolute;
+    top: 2.5rem;
+  }
+  .card .main-box .mbti-img {
+    position: absolute;
+    bottom: -3rem;
+    left: 0rem;
+    opacity: 0.3;
+    z-index: 0;
+  }
+  .card .main-box .mbti-box {
+    width: 10rem;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 6em 0 2rem 0;
+    background-color: #88619a;
+    border-radius: 100%;
+    z-index: 1;
+  }
+  .card .main-box .info-box {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+    color: #36263d;
+    padding: 0 3rem;
+    margin-bottom: 2rem;
+    line-height: 1.15;
+    word-break: break-all;
+  }
+  .card .main-box .info-box .grade-text {
+    margin-bottom: 2rem;
+  }
+
+  /* summray-box 스타일 */
+  .card .summary-box {
+    width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 30px;
+  }
+  .card .summary-box .title-text {
+    display: none;
+  }
+  .card .summary-box .detail-box {
+    width: 90%;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 5px 0;
+    padding-bottom: 5px;
+    border-radius: 10px;
+  }
+  .card .summary-box .detail-box .graph-box {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: 10px;
+  }
+  .card .summary-box div:nth-child(5) {
+    margin-bottom: 1.5rem;
+  }
+  .card .summary-box .detail-box.mind .graph-box .graph-outer {
+    width: 12rem;
+    height: 1rem;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    background-color: white;
+    margin: 0 10px;
+  }
+  .card .summary-box .detail-box.mind .graph-box .graph-inner {
+    width: 56%;
+    height: 0.8rem;
+    background-color: #d97173;
+  }
+  .card .summary-box .detail-box.energy .graph-box .graph-outer {
+    width: 12rem;
+    height: 1rem;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    margin: 0 10px;
+  }
+  .card .summary-box .detail-box.energy .graph-box .graph-inner {
+    width: 89%;
+    height: 0.8rem;
+    background-color: #f6b851;
+  }
+  .card .summary-box .detail-box.nature .graph-box .graph-outer {
+    width: 12rem;
+    height: 1rem;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    margin: 0 10px;
+  }
+  .card .summary-box .detail-box.nature .graph-box .graph-inner {
+    width: 56%;
+    height: 0.8rem;
+    background-color: #4cb59c;
+  }
+  .card .summary-box .detail-box.tactics .graph-box .graph-outer {
+    width: 12rem;
+    height: 1rem;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    margin: 0 10px;
+  }
+  .card .summary-box .detail-box.tactics .graph-box .graph-inner {
+    width: 79%;
+    height: 0.8rem;
+    background-color: #444898;
+  }
+  .card .summary-box .detail-box .graph-box .per-box {
+    width: 3rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .card .summary-box .detail-box .per-box .mini-text {
+    margin-top: 3px;
+  }
+
+  /* btn 스타일 */
+  .card .btn {
+    width: 90%;
+    height: 3rem;
+    border-radius: 10px;
+    color: white;
+    background-color: #303b59;
+    border: none;
+    margin-top: 2rem;
+    position: relative;
+  }
+  .card .btn:hover {
+    cursor: pointer;
+    background-color: #566386;
+  }
+}
