@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500..800&display=swap");
+
+* {
+  /* outline: 1px solid red; */
+}
+
+:root {
+  font-family: "Hanken Grotesk";
+  /* primary */
+  --primary-light-red: hsl(0, 100%, 67%);
+  --primary-orangey-yellow: hsl(39, 100%, 56%);
+  --primary-green-teal: hsl(166, 100%, 37%);
+  --primary-cobalt-blue: hsl(234, 85%, 45%);
+
+  --primary-bg-light-red: hsl(0, 100%, 67%, 10%);
+  --primary-bg-orangey-yellow: hsl(39, 100%, 56%, 10%);
+  --primary-bg-green-teal: hsl(166, 100%, 37%, 10%);
+  --primary-bg-cobalt-blue: hsl(234, 85%, 45%, 10%);
+
+  /* Gradients */
+  /* background */
+  --primary-light-slate-blue: hsl(252, 100%, 67%);
+  --primary-Light-royal-blue: hsl(241, 81%, 54%);
+  /* circle */
+  --primary-Violet-blue: hsla(256, 72%, 46%, 1);
+  --primary-Persian-blue: hsla(241, 72%, 46%, 0);
+
+  /* Neutral */
+  --primary-white: hsl(0, 0%, 100%);
+  --primary-pale-blue: hsl(221, 100%, 96%);
+  --primary-light-lavender: hsl(241, 100%, 89%);
+  --primary-dark-gray-blue: hsl(224, 30%, 27%);
+  --primary-dark-gray-blue-30: hsl(224, 30%, 27%, 30%);
+}
+
+.font-2big {
+  font-size: 4rem;
+}
+.font-big {
+  font-size: 2rem;
+}
+.font-small {
+  font-size: 0.5rem;
+}
+
+body {
+  font-size: 18px;
+}
+
+.container {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  width: 40rem;
+  height: 25rem;
+  border-radius: 30px;
+  box-shadow: var(--primary-pale-blue) 2px 2px;
+}
+
+.result {
+  text-align: center;
+  border-radius: 30px;
+  width: 50%;
+  padding: 20px;
+  background-image: linear-gradient(
+    to bottom,
+    var(--primary-light-slate-blue),
+    var(--primary-Light-royal-blue)
+  );
+  color: var(--primary-white);
+}
+.result-rank {
+  border-radius: 50%;
+  width: 10rem;
+  height: 10rem;
+  margin: 20px auto;
+  align-content: center;
+  background-image: linear-gradient(
+    to bottom,
+    var(--primary-Violet-blue),
+    var(--primary-Persian-blue)
+  );
+}
+.rank-main {
+  color: var(--primary-white);
+}
+.subtext {
+  color: var(--primary-light-lavender);
+  padding: 10px;
+}
+
+.summary {
+  width: 50%;
+  padding: 10px;
+}
+.summary {
+  .summary-item:nth-child(2) {
+    background-color: var(--primary-bg-light-red);
+    color: var(--primary-light-red);
+  }
+  .summary-item:nth-child(3) {
+    background-color: var(--primary-bg-orangey-yellow);
+    color: var(--primary-orangey-yellow);
+  }
+  .summary-item:nth-child(4) {
+    background-color: var(--primary-bg-green-teal);
+    color: var(--primary-green-teal);
+  }
+  .summary-item:nth-child(5) {
+    background-color: var(--primary-bg-cobalt-blue, 50%);
+    color: var(--primary-cobalt-blue, 50%); 
+  }
+}
+
+.summary-header {
+  padding: 10px;
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+
+.summary-item {
+  align-items: center;
+  display: flex;
+  position: relative;
+  width:100%;
+  border-radius: 5px;
+  margin: 10px 0;
+  height:3rem;
+  justify-content: space-between;
+  
+}
+
+.summary-img {
+  position: relative;
+}
+.summary-img > img{
+  vertical-align: sub;
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+}
+.summary-name {
+  width: 10rem;
+}
+
+.summary-sub > span {
+  color: var(--primary-dark-gray-blue) !important;
+}
+
+.summary-sub {
+  color: var(--primary-dark-gray-blue-30) ;
+  background: none !important;
+  padding-right: 10px;
+}
+
+.summary-btn {
+  margin-top: 1rem;
+  border-radius: 10rem;
+  padding: 10px;
+  text-align: center;
+  color: var(--primary-white);
+  background-color: var(--primary-dark-gray-blue);
+  cursor: pointer;
+}
+
+.summary-btn-hover:hover {
+  background-image: linear-gradient(
+    to bottom,
+    var(--primary-light-slate-blue),
+    var(--primary-Light-royal-blue)
+  );
+}
+
+@media screen and (max-width: 480px) {
+  *{
+    font-size: 14px;
+  }
+  .container {
+    min-width: 300px;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    overflow: hidden
+  }
+  .result {
+    width: 90%;
+    padding: 10px;
+  }
+  .summary {
+    width: 90%;
+
+  }
+  .card {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
