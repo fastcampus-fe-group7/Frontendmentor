@@ -1,0 +1,78 @@
+* {
+  /* outline: 1px solid red; */
+}
+
+.body {
+  font-size: 15px;
+}
+
+.root {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  margin: 0 auto;
+  display: flex;
+  width: 300px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+
+.logo {
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+}
+.join_container {
+  width: 100%;
+}
+
+.form_content {
+  /* padding: 0.5rem; */
+}
+
+.form_item {
+  position: relative;
+  height: 2rem;
+  align-content: center;
+  text-align: center;
+  border-radius: 5px;
+  /* margin: 0.5rem; */
+  margin: 0.5rem 0;
+  padding: 0.5rem 0;
+  border: 1px solid var(--gray-500);
+  animation: rotate-axis 10s ease-in-out infinite;
+}
+@keyframes rotate-axis {
+  from {
+    transform: rotateY(0deg);
+}
+  to {
+      transform: rotateY(360deg);
+  }
+}
+.form_item .input {
+  width: 90%;
+  line-height: 1.5rem;
+  border: none;
+  flex: 1 1 auto;
+}
+.btn_wrap {
+  width: 100%;
+}
+.btn_submit {
+  width: 100%;
+  line-height: 2rem;
+  background-color: var(--gray-300);
+  border: none;
+  cursor: pointer;
+}
+.btn_submit.active {
+  background-color: hsl(148, 38%, 51%) !important;
+  color: white;
+}
