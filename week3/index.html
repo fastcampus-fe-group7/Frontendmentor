@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week3 - Intro component with sign-up form</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="background"></div>
+        <div class="profile">
+          <img
+            class="profile-img"
+            src="/assets/images/default.png"
+            alt="프로필 사진"
+          />
+        </div>
+        <div class="content">
+          <div class="content-top sero">
+            <div class="name-age">
+              <span class="name-data large-text bold-text"></span>
+              <span class="age-data large-text gray-text"></span>
+            </div>
+            <div class="location">
+              <span class="location-data normal-text gray-text"></span>
+            </div>
+          </div>
+          <div class="content-bottom">
+            <div class="bottom-left sero">
+              <span class="number-data large-text bold-text">0</span>
+              <span class="small-text gray-text">Followers</span>
+            </div>
+            <div class="bottom-center sero">
+              <span class="number-data large-text bold-text">0</span>
+              <span class="small-text gray-text">Likes</span>
+            </div>
+            <div class="bottom-right sero">
+              <span class="number-data large-text bold-text">0</span>
+              <span class="small-text gray-text">Photos</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form">
+        <label class="label bold-text" for="first-name">First Name</label>
+        <input
+          class="input-text"
+          type="text"
+          name="first-name"
+          id="first-name"
+        />
+        <label class="label bold-text" for="last-name">Last Name</label>
+        <input class="input-text" type="text" name="last-name" id="last-name" />
+        <label class="label bold-text" for="age">Age</label>
+        <input class="input-text" type="number" name="age" id="age" min="0" />
+        <label class="label bold-text" for="location">Location</label>
+        <input class="input-text" type="text" name="location" id="location" />
+        <label class="label bold-text" for="image">Profile Image</label>
+        <input class="input-file" type="file" name="image" id="image" />
+        <button class="button">CREATE PROFILE</button>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  // 이미지 데이터를 저장하기 위한 배열
+  const imageFile = [];
+
+  // 이미지 파일이 등록되었을 때 동작하는 함수
+  document.querySelector('.input-file').addEventListener('change', (e) => {
+    const file = e.target.files[0];
+
+    if (file) {
+      const rd = new FileReader();
+
+      rd.onload = (event) => {
+        imageFile[0] = event.target.result;
+      };
+
+      rd.readAsDataURL(file);
+    }
+  });
+
+  // 버튼 클릭 시 동작하는 함수
+  document.querySelector('.button').addEventListener('click', () => {
+    // 기존에 있었던 프로필 초기화 로직
+    document.querySelector('.profile').innerHTML = `<img
+            class="profile-img"
+            src="/assets/images/default.png"
+            alt="프로필 사진"
+          />`;
+
+    document.querySelector(
+      '.content-bottom'
+    ).innerHTML = `<div class="bottom-left sero">
+              <span class="number-data large-text bold-text">0</span>
+              <span class="small-text gray-text">Followers</span>
+            </div>
+            <div class="bottom-center sero">
+              <span class="number-data large-text bold-text">0</span>
+              <span class="small-text gray-text">Likes</span>
+            </div>
+            <div class="bottom-right sero">
+              <span class="number-data large-text bold-text">0</span>
+              <span class="small-text gray-text">Photos</span>
+            </div>`;
+
+    const name = `${document.querySelector('#last-name').value} ${
+      document.querySelector('#first-name').value
+    }`;
+    const age = document.querySelector('#age').value;
+    const location = document.querySelector('#location').value;
+    const image = document.querySelector('#image').value;
+
+    document.querySelector('.name-data').innerHTML = name;
+    document.querySelector('.age-data').innerHTML = age;
+    document.querySelector('.location-data').innerHTML = location;
+    document.querySelector('.profile').innerHTML = imageFile[0]
+      ? `<img
+            class="profile-img"
+            src=${imageFile}
+            alt="profile"
+          />`
+      : `<img
+            class="profile-img"
+            src="/assets/images/default.png"
+            alt="profile"
+          />`;
+
+    imageFile.pop();
+
+    document.querySelector('#last-name').value = '';
+    document.querySelector('#first-name').value = '';
+    document.querySelector('#age').value = '';
+    document.querySelector('#location').value = '';
+    document.querySelector('#image').value = '';
+  });
+
+  // 팔로워, 좋아요, 사진 숫자에 해당하는 값을 눌렀을 때 동작(+1)하는 함수
+  document.querySelector('.content-bottom').addEventListener('click', (e) => {
+    if (!e.target.closest('.number-data')) return;
+
+    e.target.innerHTML = +e.target.innerHTML + 1;
+  });
+</script>
