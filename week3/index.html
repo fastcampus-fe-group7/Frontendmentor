@@ -2,15 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/reset.css" />
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/variable.css" />
-    <link ref="javascript" href="./js/index.js" />
+    <script src="./js/index.js"></script>
   </head>
   <body>
     <div class="root">
       <div class="container">
+        <div id="tost_message"></div>
         <div class="logo">
           <svg
             data-v-62b4fdfc=""
@@ -44,36 +46,114 @@
             </defs>
           </svg>
         </div>
-        <div class="profile_container"></div>
-        <div class="join_container">
-          <form class="join_form" method="post" action="#" id="join_form">
-            <input type="hidden" id="userId" />
-            <input type="hidden" id="name" />
-            <input type="hidden" id="pwd" />
-            <input type="hidden" id="bday" />
-            <input type="hidden" id="phone" />
+        <div class="container_contents">
+          <div class="join_container">
             <div class="form_content">
-              <div class="form_item" id="div_userId">
-                <input type="text" id="userId" placeholder="아이디" class="input" maxlength="20" autocapitalize="off" autocomplete="false"/>
+              <div class="form_item" id="div_userEmail">
+                <input
+                  type="text"
+                  id="userEmail"
+                  placeholder="이메일 ex) abc@abc.com"
+                  class="input"
+                  maxlength="20"
+                  autocapitalize="off"
+                  autocomplete="false"
+                />
               </div>
-              <div class="form_item" id="div_pwd">
-                <input type="password" id="userpwd" placeholder="비밀번호" class="input" maxlength="20" autocapitalize="off" autocomplete="false"/>
+              <div class="form_item" id="div_userLoc">
+                <input
+                  type="text"
+                  id="userLoc"
+                  placeholder="사는곳"
+                  class="input"
+                  maxlength="20"
+                  autocapitalize="off"
+                  autocomplete="false"
+                />
               </div>
-              <div class="form_item" id="div_name">
-                <input type="text" id="userName" placeholder="이름" class="input" maxlength="20" autocapitalize="off" autocomplete="false"/>
+              <div class="form_item" id="div_userName">
+                <input
+                  type="text"
+                  id="userName"
+                  placeholder="이름"
+                  class="input"
+                  maxlength="20"
+                  autocapitalize="off"
+                  autocomplete="false"
+                />
               </div>
-              <div class="form_item" id="div_bday">
-                <input type="text" id="userBday" placeholder="생년월일" class="input" maxlength="20" autocapitalize="off" autocomplete="false"/>
+              <div class="form_item" id="div_userBday">
+                <input
+                  type="text"
+                  id="userBday"
+                  placeholder="생년월일 ex) YYYY-MM-DD"
+                  class="input"
+                  maxlength="20"
+                  autocapitalize="off"
+                  autocomplete="false"
+                />
               </div>
-              <div class="form_item" id="div_phone">
-                <input type="tel" id="userPhone" placeholder="전화번호" class="input" maxlength="20" autocapitalize="off" autocomplete="false"/>
+              <div class="form_item" id="div_userPhone">
+                <input
+                  type="tel"
+                  id="userPhone"
+                  placeholder="전화번호 ex) 010-0000-0000"
+                  class="input"
+                  maxlength="20"
+                  autocapitalize="off"
+                  autocomplete="false"
+                />
               </div>
             </div>
-          </form>
-          <div class="btn_wrap">
-            <button type="button" class="btn_submit active" id="btn_submit">
-              회원가입
-            </button>
+            <div class="btn_wrap">
+              <button
+                type="button"
+                class="btn_submit active"
+                id="btn_submit"
+                onclick="createProfile()"
+              >
+                프로필카드 생성
+              </button>
+            </div>
+          </div>
+          <div class="profile_container">
+            <div class="profile_card">
+              <div class="main_info">
+                <img
+                  src="./images/bg-pattern-card.svg"
+                  alt="bg-card"
+                  class="bg-card"
+                />
+                <div class="imgDiv">
+                  <img
+                  src="./images/image-victor.jpg"
+                  alt="photo"
+                  class="photo"
+                  />
+                </div>
+                <div class="info">
+                  <p class="bold grey font15px">
+                    <span class="black font20px" id="name"></span>
+                  </p>
+                  <p class="bold grey font15px" id="loc"></p>
+                </div>
+              </div>
+
+              <div class="sub_info">
+                <div class="item">
+                  <span class="grey font15px">BirthDay</span><br/>
+                  <span class="bold black" id="bday"></span>
+                </div>
+                <div class="item">
+                  <span class="grey font15px">Email</span><br/>
+                  <span class="bold black" id="email"></span>
+                </div>
+                <div class="item">
+                  <span class="grey font15px">Phone</span><br/>
+                  <span class="bold black" id="phone"></span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -16,7 +16,6 @@
 .container {
   margin: 0 auto;
   display: flex;
-  width: 300px;
   align-items: center;
   flex-direction: column;
   justify-content: center;
@@ -24,16 +23,120 @@
 }
 
 .logo {
-  width: 100%;
   padding: 10px 0;
   text-align: center;
 }
-.join_container {
-  width: 100%;
+
+.container_contents {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+.container_contents > div {
+  margin: 20px;
 }
 
-.form_content {
-  /* padding: 0.5rem; */
+.profile_container {
+  border: 1px solid var(--gray-200);
+  border-radius: 20px;
+  display: none;
+}
+
+.profile_card {
+  background-color: white;
+  text-align: center;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.main_info {
+  border-bottom: 1px solid #dedede;
+
+  > .bg-card {
+    display: block;
+    width: 100%;
+    height: 150px;
+  }
+  .info {
+    margin-top: -40px;
+  }
+}
+
+.photo {
+  border-radius: 50%;
+  border: 5px solid white;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+}
+
+.sub_info {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100px;
+  align-items: center;
+  > .item {
+    width: 50%;
+    text-align: center;
+  }
+}
+
+.appear {
+  animation: fade-in 1s;
+  animation-fill-mode: forwards;
+  display: flex;
+}
+
+.disappear {
+  animation: fade-out 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.container_modal {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--gray-600) !important;
+  z-index: 10;
+}
+
+.container_modal > div {
+  margin: 0 auto;
+  height: 100%;
+  align-content: center;
+}
+
+.none {
+  display: none;
+}
+.block {
+  display: block;
+}
+
+.join_container {
+  width: 300px;
 }
 
 .form_item {
@@ -46,16 +149,12 @@
   margin: 0.5rem 0;
   padding: 0.5rem 0;
   border: 1px solid var(--gray-500);
-  animation: rotate-axis 10s ease-in-out infinite;
+  background-color: white;
 }
-@keyframes rotate-axis {
-  from {
-    transform: rotateY(0deg);
+.inValid {
+  border: 1px solid red !important;
 }
-  to {
-      transform: rotateY(360deg);
-  }
-}
+
 .form_item .input {
   width: 90%;
   line-height: 1.5rem;
@@ -64,15 +163,54 @@
 }
 .btn_wrap {
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 .btn_submit {
   width: 100%;
-  line-height: 2rem;
-  background-color: var(--gray-300);
+  line-height: 3rem;
+  background-color: var(--primary-200);
+  color: white;
   border: none;
   cursor: pointer;
+  border-radius: 10px;
 }
-.btn_submit.active {
-  background-color: hsl(148, 38%, 51%) !important;
+.btn_submit:hover {
+  background-color: var(--primary-300) !important;
   color: white;
+}
+.btn_submit:disabled {
+  background-color: var(--gray-800) !important;
+  color: white;
+}
+
+@media screen and (max-width: 600px){
+  .container_contents {
+    flex-direction: column;
+  }
+  
+  .join_container {
+    min-width: 300px;
+    width: inherit;
+  }
+}
+
+/*토스트 메시지*/
+#tost_message {
+  opacity: 0;
+  position: fixed;
+  bottom: -100px;
+  left: 50%;
+  transform: translate(-50%,0);
+  padding: 10px 50px;
+  background: rgba(0, 0, 0, 0.70);
+  border-radius: 100px;
+  color: #fff;
+  box-shadow: 3px 4px 11px 0px #00000040;
+  transition: all 0.5s;
+}
+/*토스트 메시지 활성화 되었을 때*/
+#tost_message.active {
+  opacity: 100%;
+  bottom: 50px;
 }
