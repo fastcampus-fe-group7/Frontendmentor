@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Intro component with sign up form</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/style_input.css" />
+    <link rel="stylesheet" href="src/style_profile.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="profile">
+        <div class="profile-top">
+          <div class="profile-img"><img src="./images/image-victor.jpg" /></div>
+        </div>
+
+        <div class="profile-mid">
+          <div class="name">Victor Crest<span class="age">26</span></div>
+          <div class="city">London</div>
+        </div>
+
+        <div class="profile-bottom">
+          <div class="info">
+            <div class="stats">80K</div>
+            <div class="description">Followers</div>
+          </div>
+          <div class="info">
+            <div class="stats">803K</div>
+            <div class="description">Likes</div>
+          </div>
+          <div class="info">
+            <div class="stats">1.4K</div>
+            <div class="description">Photos</div>
+          </div>
+        </div>
+      </div>
+      <form id="profileForm">
+        <div>
+          <h2>Name</h2>
+          <input type="text" id="nameInput" required placeholder="권혁준" />
+        </div>
+        <div>
+          <h2>Age</h2>
+          <input type="number" id="ageInput" required placeholder="39" />
+        </div>
+        <div>
+          <h2>City</h2>
+          <input type="text" id="cityInput" required placeholder="Busan" />
+        </div>
+
+        <button type="submit">들어가기</button>
+      </form>
+
+      <script src="index.js"></script>
+    </div>
+  </body>
+</html>

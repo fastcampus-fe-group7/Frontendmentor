@@ -195,6 +195,12 @@ button {
     font-weight: 700;
     background-color: hsl(224, 30%, 27%);
     border-radius: 25px;
+    transition: .4s
+}
+
+button:hover {
+    background-color: hsl(224, 56%, 69%);
+    border-color: hsl(224, 56%, 69%);
 }
 
 @media screen and (max-width:405px) {
