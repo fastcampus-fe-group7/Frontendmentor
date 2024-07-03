@@ -1,0 +1,130 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+  /* outline: 1px red solid; */
+}
+
+html,
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 32px;
+  font-family: "League Spartan", sans-serif;
+  font-weight: 700;
+  background-color: hsl(222, 26%, 31%);
+}
+button{
+  font-size:inherit;
+  font-family: inherit;
+  font-weight:inherit;
+}
+.lighter{
+  font-weight:500;
+}
+.smaller{
+  font-size:24px;
+}
+.more-smaller{
+  font-size:12px;
+}
+.more-bigger{
+  font-size:48px;
+}
+.calculator{
+  /* background-color: gray; */
+  width: 450px;
+  height:650px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.calculator-header{
+  width:100%;
+  height:50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.calculator-header .theme{
+  display: flex;
+  align-items: center;
+}
+.calculator-header .theme >p{
+  padding:10px;
+}
+.calculator-result{
+  width:100%;
+  height:100px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  background-color: hsl(224, 36%, 15%);
+  padding: 10px 30px;
+  border-radius: 10px;
+}
+.calculator-keys{
+  width:100%;
+  height:400px;
+  color:hsl(221, 14%, 31%);
+  background-color: hsl(223, 31%, 20%);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.btn-design{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#line1 > button,
+#line2 > button,
+#line3 > button,
+#line4 > button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  width:80px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0px 2px hsl(0, 0%, 93%);
+}
+#line1 > button:active,
+#line2 > button:active,
+#line3 > button:active,
+#line4 > button:active,
+#line5 >button:active{
+  transform: scale(0.95);
+  background-color: lightgray !important;
+  box-shadow: 0px 2px  lightblue !important;
+}
+
+#line5 > button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(225, 21%, 49%);
+  color:white;
+  width:185px;
+  height:50px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0px 2px hsl(224, 28%, 35%);
+}
+#del{
+  background-color: hsl(225, 21%, 49%) !important;
+  color:white !important;
+  box-shadow: 0px 5px hsl(224, 28%, 35%) !important;
+}
+#result{
+  background-color: hsl(6, 63%, 50%) !important;
+  box-shadow: 0px 2px hsl(6, 70%, 34%) !important;
+}
