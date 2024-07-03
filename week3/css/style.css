@@ -1,0 +1,179 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+html,
+body{
+  width:100%;
+  height:100%;
+  font-size: 10px;
+}
+.bold{
+  font-weight:700;
+}
+.gray{
+  color:gray;
+}
+
+.container{
+  width:100%;
+  height:100%;
+  display: flex;
+  justify-content: center;
+  background-image:url("../images/bg-intro-desktop.png");
+  background-color: hsl(0, 100%, 74%) ;
+  position: relative;
+}
+
+.explain{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width:50rem;
+  max-width:40rem;
+
+  height:50rem;
+  margin: auto 2rem;
+}
+.explain>p{
+  color:white;
+  margin:1rem 0;
+}
+
+.explain > p:first-child{
+  font-weight: 700;
+  font-size: 4rem;
+}
+.explain > p:last-child{
+  font-weight:400;
+}
+.form{
+  width:50rem;
+  max-width:40rem;
+  height:50rem;
+  margin: auto 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.ad{
+  width:100%;
+  background-color: rgb(93,84,163);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height:4rem;
+  margin-bottom: 1rem;
+  border-radius: .5rem;
+  box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.5);
+}
+.ad >p{
+  color:white;
+}
+.data{
+  width:100%;
+  height: auto;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding:2rem;
+  border-radius: .5rem;
+  box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.5);
+}
+.data>input{
+  width: 30rem;
+  height:4rem;
+  margin:1rem 0;
+  border:1px solid lightgrey ;
+  border-radius: .5rem;
+  padding-left:1.5rem;
+}
+.data>input#first::before{
+  content: "First Name";
+}
+
+.data>button{
+  width: 30rem;
+  height: 4rem;
+  border: none;
+  border-radius: .5rem;
+  color:white;
+  margin:1rem 0;
+  background-color: rgb(55,204,138);
+  cursor: pointer;
+}
+.data>button:hover{
+  background-color: rgba(55,204,138,0.9);
+}
+.data>p{
+  color:lightgrey;
+  font-size: 0.8rem;
+}
+.data>p>span{
+  color:hsl(0, 100%, 74%) ;
+}
+
+.result{
+  width:50rem;
+  max-width:40rem;
+  height:50rem;
+  margin: auto 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size:2rem;
+}
+.back{
+  background-color: steelblue;
+  width:inherit;
+  max-width:inherit;
+  height:inherit;
+  border-radius: 10px;
+  position: relative;
+}
+.profile{
+  background-color: white;
+  position: absolute;
+  bottom:0;
+  width:50rem;
+  max-width:40rem;
+  height:35rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.image{
+  background-color: white;
+  border:5px solid white;
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  top:0;
+  transform:translate(0,-50%);
+}
+img{
+  display: block;
+  width:12rem;
+  height:12rem;
+}
+p#city{
+  text-align: center;
+  color:red;
+}
+
+/* .status .ageDiv,
+.status .cityDiv,
+.status .nameDiv{
+  padding:.5rem 1rem;
+  border:1px solid gray;
+  border-radius: 10px;
+} */
