@@ -26,8 +26,8 @@ body {
 }
 
 .calculator {
-  width: 25rem;
-  height: 35rem;
+  width: 18rem;
+  height: 25rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -59,22 +59,23 @@ body {
   gap: 1rem;
 }
 .key {
-  width: 5rem;
-  height: 5rem;
+  width: 3rem;
+  height: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50px;
-  font-size: 25px;
+  font-size: 20px;
 }
 .double-key {
-  width: 11rem;
-  height: 5rem;
+  width: 7rem;
+  height: 3rem;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   border-radius: 50px;
-  font-size: 25px;
+  font-size: 20px;
+  padding-left: 1rem;
 }
 .number {
   border: 1px solid #333;
