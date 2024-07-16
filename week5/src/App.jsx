@@ -4,11 +4,9 @@ import "./styles/variable.css";
 
 function App() {
   return (
-    <>
-      <div className="container">
-        <Calculator className="calc" />
-      </div>
-    </>
+    <div className="container">
+      <Calculator />
+    </div>
   );
 }
 
