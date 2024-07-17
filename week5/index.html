@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>Week5 - Calculator app</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="calculator">
+        <div class="result">
+          <p class="result-data">0</p>
+        </div>
+        <div class="keys">
+          <button class="key advance">AC</button>
+          <button class="key advance">CE</button>
+          <button class="key advance">%</button>
+          <button class="key sign">÷</button>
+          <button class="key number">7</button>
+          <button class="key number">8</button>
+          <button class="key number">9</button>
+          <button class="key sign">×</button>
+          <button class="key number">4</button>
+          <button class="key number">5</button>
+          <button class="key number">6</button>
+          <button class="key sign">-</button>
+          <button class="key number">1</button>
+          <button class="key number">2</button>
+          <button class="key number">3</button>
+          <button class="key sign">+</button>
+          <button class="key double-key number">0</button>
+          <button class="key number">.</button>
+          <button class="key sign">=</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  // 입력되는 숫자와 기호를 담아 연산에 사용하기 위한 배열
+  const screenArr = [];
+  const nowSignArr = [];
+  const operandArr = [];
+
+  // 결과 데이터 값
+  const result = document.querySelector('.result-data');
+
+  // 클릭되는 버튼의 값을 확인하기 위한 배열
+  const numArr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const signArr = ['+', '-', '×', '÷', '='];
+  const advanceArr = ['AC', 'CE'];
+
+  // 버튼이 눌렸을 때 실행할 동작
+  document.querySelector('.keys').addEventListener('click', (e) => {
+    if (!e.target.closest('button')) return;
+
+    const key = e.target.innerHTML;
+
+    if (numArr.indexOf(+key) > -1) {
+      if (nowSignArr.length === 0) {
+        if (screenArr.length >= 9) return;
+        screenArr.push(key);
+        updateResultDisplay(screenArr);
+      } else {
+        if (operandArr.length >= 9) return;
+        operandArr.push(key);
+        updateResultDisplay(operandArr);
+      }
+    } else if (signArr.indexOf(key) > -1) {
+      if (screenArr.length === 0) return;
+
+      switch (key) {
+        case '+':
+          nowSignArr[0] = '+';
+          break;
+
+        case '-':
+          nowSignArr[0] = '-';
+          break;
+
+        case '×':
+          nowSignArr[0] = '×';
+          break;
+
+        case '÷':
+          nowSignArr[0] = '÷';
+          break;
+
+        case '=':
+          if (
+            screenArr.length > 0 &&
+            nowSignArr.length > 0 &&
+            operandArr.length > 0
+          ) {
+            const resultValue = calcLogic(nowSignArr[0]);
+            if (String(resultValue).replace('.', '').length > 9) {
+              dataReset();
+              result.innerHTML = 'Error';
+            } else {
+              dataReset();
+              String(resultValue)
+                .split('')
+                .forEach((num) => {
+                  screenArr.push(num);
+                });
+              updateResultDisplay(screenArr);
+            }
+          }
+          break;
+      }
+    } else if (advanceArr.indexOf(key) > -1) {
+      if (key === 'AC') {
+        dataReset();
+        updateResultDisplay(screenArr);
+      } else {
+        if (nowSignArr.length === 0) {
+          screenArr.pop();
+          updateResultDisplay(screenArr);
+        } else {
+          operandArr.pop();
+          updateResultDisplay(operandArr);
+        }
+      }
+    }
+  });
+
+  // 현재까지 사용된 모든 데이터를 지우는 로직
+  const dataReset = () => {
+    screenArr.length = 0;
+    nowSignArr.length = 0;
+    operandArr.length = 0;
+  };
+
+  // 입력된 부호의 종류에 따라 계산을 처리하는 로직
+  const calcLogic = (sign) => {
+    const num1 = parseFloat(screenArr.join(''));
+    const num2 = parseFloat(operandArr.join(''));
+
+    if (isNaN(num1) || isNaN(num2)) return NaN;
+
+    let result;
+    if (sign === '+') {
+      result = num1 + num2;
+    } else if (sign === '-') {
+      result = num1 - num2;
+    } else if (sign === '×') {
+      result = num1 * num2;
+    } else if (sign === '÷') {
+      result = num1 / num2;
+    }
+
+    return parseFloat(result.toFixed(9));
+  };
+
+  // 결과 값 숫자 길이에 따라 폰트 사이즈를 조절하기 위한 로직
+  const updateResultDisplay = (arr) => {
+    const value = arr.join('');
+
+    if (!value) {
+      result.innerHTML = 0;
+    } else {
+      result.innerHTML = parseFloat(value).toLocaleString();
+    }
+
+    result.classList.remove('small-font', 'middle-font');
+
+    if (value.length > 7) {
+      result.classList.add('small-font');
+    } else if (value.length > 5) {
+      result.classList.add('middle-font');
+    }
+  };
+</script>
