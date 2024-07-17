@@ -17,23 +17,29 @@ body{
   font-weight: 700;
   background-color: hsl(222, 26%, 31%);
 }
+
 button{
   font-size:inherit;
   font-family: inherit;
   font-weight:inherit;
 }
+
 .lighter{
   font-weight:500;
 }
-.smaller{
-  font-size:24px;
-}
-.more-smaller{
-  font-size:12px;
-}
+
 .more-bigger{
   font-size:48px;
 }
+
+.smaller{
+  font-size:24px;
+}
+
+.more-smaller{
+  font-size:12px;
+}
+
 .calculator{
   /* background-color: gray; */
   width: 450px;
@@ -122,7 +128,7 @@ button{
 #del{
   background-color: hsl(225, 21%, 49%) !important;
   color:white !important;
-  box-shadow: 0px 5px hsl(224, 28%, 35%) !important;
+  box-shadow: 0px 2px hsl(224, 28%, 35%) !important;
 }
 #result{
   background-color: hsl(6, 63%, 50%) !important;
