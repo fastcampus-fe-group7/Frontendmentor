@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 const HistoryBtn = styled.div`
   margin: 5% 20px 0 auto;
-  /* margin-top: 5%; */
 
   background-image: url('../assets/history.svg');
   width:24px;

@@ -5,6 +5,7 @@ const CalcBtn = `
   line-height: 3rem;
   border-radius: 5px;
   font-size: 2rem;
+  border: none;
 `;
 
 // 뭔가 최악의 형태가 된듯?
@@ -24,7 +25,7 @@ const Key = styled.button`
 const Button = ( {props, handleButton} ) => {
   const { key, size, type, fontSize, color } = props;
   return (
-    <Key styles={props} value={key} type={type} onClick={handleButton}>
+    <Key styles={props} data-value={key} data-type={type} onClick={handleButton}>
       {key}
     </Key>
   );

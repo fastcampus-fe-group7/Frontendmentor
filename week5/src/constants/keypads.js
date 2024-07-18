@@ -1,3 +1,12 @@
+import { clickNumber, clickSymbol } from "../util/keypadUtil";
+
+export const keypadTypes = {
+  number: 'number',
+  symbol: 'symbol',
+  resetKey: 'resetKey',
+  equalKey: 'equalKey',
+}
+
 const optionSize = {
   size1: {
     width: "3rem",
@@ -13,7 +22,7 @@ const optionSize = {
 
 const buttonOptions = {
   number: {
-    type: "number",
+    type: keypadTypes.number,
     size: {
       ...optionSize.size1,
     },
@@ -23,9 +32,10 @@ const buttonOptions = {
       boxShadow: "0 2px",
       boxShadowColor: "--numkey-shadow",
     },
+    clickMethod: clickNumber,
   },
   symbol: {
-    type: "symbol",
+    type: keypadTypes.symbol,
     size: {
       ...optionSize.size1,
     },
@@ -36,6 +46,7 @@ const buttonOptions = {
       boxShadow: "0 2px",
       boxShadowColor: "--key-shadow",
     },
+    clickMethod: clickSymbol,
   },
 };
 
@@ -60,8 +71,12 @@ const keypads = {
     { key: ".", ...buttonOptions.symbol, },
     { key: "+", ...buttonOptions.symbol, },
 
-    { key: "RESET", ...buttonOptions.symbol, size: {...optionSize.size2, font: '1rem'}, },
-    { key: "=", ...buttonOptions.symbol, size: optionSize.size2,
+    { key: "RESET", ...buttonOptions.symbol, 
+      type: keypadTypes.resetKey,
+      size: {...optionSize.size2, font: '1rem'}, },
+    { key: "=", ...buttonOptions.symbol, 
+      type: keypadTypes.equalKey,
+      size: optionSize.size2,
       color: {
         ...buttonOptions.symbol.color,
         background: "--equal-key-background",
